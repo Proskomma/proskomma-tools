@@ -1,0 +1,29 @@
+{
+  "name": "proskomma-tools",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Helpers to use when building projects around Proskomma",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "prepublishOnly": "rm -fr dist && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proskomma/proskomma-tools.git"
+  },
+  "author": "Mark Howe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Proskomma/proskomma-tools/issues"
+  },
+  "homepage": "https://github.com/Proskomma/proskomma-tools#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "babel-eslint": "^10.1.0"
+  }
+}
