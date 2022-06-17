@@ -1,4 +1,4 @@
-import { parseReferenceString } from "../pre-query";
+import { parseReferenceString } from "../pre-query/index.js";
 const passageQuery = ({
     reference,
     bookCode: _bookCode,

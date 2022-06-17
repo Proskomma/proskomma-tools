@@ -1,7 +1,7 @@
-import parseChapterVerseMapInDocSets from "./catalog";
-import { parsePassageResponse, parseScopeLabels } from "./passage";
-import searchForBookCodesFilter from "./searchForBookCodes";
-import { searchForBlocksFilter, searchForVersesFilter } from "./searchForPassage";
+import parseChapterVerseMapInDocSets from "./catalog.js";
+import { parsePassageResponse, parseScopeLabels } from "./passage.js";
+import searchForBookCodesFilter from "./searchForBookCodes.js";
+import { searchForBlocksFilter, searchForVersesFilter } from "./searchForPassage.js";
 
 const postQueries = { 
     parseChapterVerseMapInDocSets, 
