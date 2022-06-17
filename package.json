@@ -5,6 +5,7 @@
   "description": "Helpers to use when building projects around Proskomma",
   "main": "dist/index.js",
   "scripts": {
+    "test": "node test/code/queries.js",
     "build": "babel src -d dist",
     "prepublishOnly": "rm -fr dist && npm run build"
   },
@@ -24,6 +25,10 @@
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
-    "babel-eslint": "^10.1.0"
+    "babel-eslint": "^10.1.0",
+    "fs-extra": "^10.1.0",
+    "path": "^0.12.7",
+    "proskomma": "^0.7.5",
+    "tape": "^5.5.3"
   }
 }
