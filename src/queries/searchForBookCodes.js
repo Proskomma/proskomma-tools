@@ -1,7 +1,7 @@
 import {
   searchTermsClause,
   attTermsClause,
-} from '../pre-query';
+} from '../pre-query/index.js';
 
 const searchForBookCodesQuery = ({ text, docSetId }) => {
   const _searchTermsClause = searchTermsClause(text);

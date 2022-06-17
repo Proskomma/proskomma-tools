@@ -1,7 +1,7 @@
-import catalogQuery from "./catalog";
-import passageQuery from "./passage";
-import searchForBookCodesQuery from "./searchForBookCodes";
-import searchForPassagesQuery from "./searchForPassage";
+import catalogQuery from "./catalog.js";
+import passageQuery from "./passage.js";
+import searchForBookCodesQuery from "./searchForBookCodes.js";
+import searchForPassagesQuery from "./searchForPassage.js";
 
 const queries = {
     catalogQuery, 

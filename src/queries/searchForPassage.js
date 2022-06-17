@@ -2,7 +2,7 @@ import {
     searchTermsClause,
     attTermsClause,
     searchTermsRegex,
-  } from '../pre-query';
+  } from '../pre-query/index.js';
   
 const searchForPassagesQuery = ({
 text, docSetId, bookCode, blocks = false, tokens = false,
