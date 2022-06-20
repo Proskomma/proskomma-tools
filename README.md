@@ -38,11 +38,15 @@ import { queries, postQueries } from 'proskomma-tools';
             2. bookCode and chapterVerses
             3. reference
 
-            In option 3, passageQuery internally calls postQueries.parseReferenceString to separate reference out into a bookCode and chapter/chapterVerses.
+            In option 3, passageQuery internally calls preQueries.parseReferenceString 
+            to separate reference out into a bookCode and chapter/chapterVerses.
         */
     });
 
-    //call gqlQuery method on Proskomma instance that for the purposes of the example is located elsewhere and has been pre-populated with scripture
+    /*
+        call gqlQuery method on Proskomma instance that for the purposes of the example 
+        is located elsewhere and has been pre-populated with scripture
+    */
     const result = await pk.gqlQuery(queryString);
 
     //an array of objects with properties docSetId, reference, and text.
