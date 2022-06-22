@@ -3,6 +3,7 @@ Helpers to use when building projects around Proskomma
 
 ## Setup
 ```
+npm install proskomma-tools
 cd proskomma-tools
 npm install
 ```
@@ -23,39 +24,36 @@ This example assumes you already have a `Proskomma` instance that has been popul
 //import statements
 import { queries, postQueries } from 'proskomma-tools';
 
-//async function so we can await the result of the gqlQuery call on Proskomma
-(async () => {
-    //separate "JHN 3:16" into a bookCode and chapter/chapterVerses
-    const reference = preQueries.parseReferenceString("JHN 3:16");
+//separate "JHN 3:16" into a bookCode and chapter/chapterVerses
+const reference = preQueries.parseReferenceString("JHN 3:16");
 
-    //string to pass to Proskomma.gqlQuery()
-    const queryString = queries.passageQuery({
-        bookCode: reference.bookCode,
-        chapterVerses: reference.chapterVerses
-        /*
-            passageQuery can take 3 different combinations of parameters:
-            1. bookCode and chapter
-            2. bookCode and chapterVerses
-            3. reference
-
-            In option 3, passageQuery internally calls preQueries.parseReferenceString 
-            to separate reference out into a bookCode and chapter/chapterVerses.
-        */
-    });
-
+//string to pass to Proskomma.gqlQuery()
+const queryString = queries.passageQuery({
+    bookCode: reference.bookCode,
+    chapterVerses: reference.chapterVerses
     /*
-        call gqlQuery method on Proskomma instance that for the purposes of the example 
-        is located elsewhere and has been pre-populated with scripture
+        passageQuery can take 3 different combinations of parameters:
+        1. bookCode and chapter
+        2. bookCode and chapterVerses
+        3. reference
+
+        In option 3, passageQuery internally calls preQueries.parseReferenceString 
+        to separate reference out into a bookCode and chapter/chapterVerses.
     */
-    const result = await pk.gqlQuery(queryString);
+});
 
-    //an array of objects with properties docSetId, reference, and text.
-    const passages = postQueries.parsePassageResponse({
-        bookCode: reference.bookCode,
-        data: result.data
-    });
+/*
+    call gqlQuery method on Proskomma instance that for the purposes of the example 
+    is located elsewhere and has been pre-populated with scripture
+*/
+const result = pk.gqlQuerySync(queryString);
 
-    //print to console [optional]
-    console.log(JSON.stringify(passages, null, 2));
-})();
+//an array of objects with properties docSetId, reference, and text.
+const passages = postQueries.parsePassageResponse({
+    bookCode: reference.bookCode,
+    data: result.data
+});
+
+//print to console [optional]
+console.log(JSON.stringify(passages, null, 2));
 ```
