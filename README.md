@@ -22,7 +22,7 @@ npm install
 This example assumes you already have a `Proskomma` instance that has been populated with scripture data.
 ```js
 //import statements
-import { queries, postQueries } from 'proskomma-tools';
+import { queries, preQueries, postQueries } from 'proskomma-tools';
 
 //separate "JHN 3:16" into a bookCode and chapter/chapterVerses
 const reference = preQueries.parseReferenceString("JHN 3:16");
