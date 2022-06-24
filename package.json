@@ -1,11 +1,10 @@
 {
   "name": "proskomma-tools",
-  "version": "0.0.4",
-  "type": "module",
+  "version": "0.0.5",
   "description": "Helpers to use when building projects around Proskomma",
   "main": "dist/index.js",
   "scripts": {
-    "test": "node test/code/queries.js",
+    "test": "npm run prepublishOnly && node test/code/*.cjs",
     "build": "babel src -d dist",
     "prepublishOnly": "rm -fr dist && npm run build"
   },
